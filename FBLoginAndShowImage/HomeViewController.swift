@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import UIKit
 
-class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var fbProfilePic: UIImageView!
     @IBOutlet weak var fbName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -30,18 +30,7 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
         print("Delegate Image")
         print("ProfileImageList.pic  ~\(ProfileImageList.pic[2].name)")
     }
-    func changeProfileNameLabel() {
-        nameLabel.text = ProfileImageList.pic[1].description
-        print("Delegate name")
-    }
-    
-    func changeProfileAge() {
-        var age = ageLabel
-        print("ageText")
-        
-//這邊age實體化後，EditProfile那什麼拿不到??
-        
-    }
+
     
     
     
@@ -128,12 +117,7 @@ class HomeViewController: UIViewController, ChangeFbProfileDelegate, UICollectio
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "homeToEdit" {
-            let editProfile: EditProfileViewController = segue.destinationViewController as! EditProfileViewController
-            editProfile.delegate = self
-        }
-    }
+
     
     /*
     // MARK: - Navigation

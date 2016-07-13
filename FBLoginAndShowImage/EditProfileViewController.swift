@@ -9,16 +9,11 @@
 import UIKit
 
 
-@objc protocol ChangeFbProfileDelegate : class {
-    func changeProfileImage()
-    func changeProfileNameLabel()
-    func changeProfileAge()
-}
+
 
 class EditProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    weak var delegate : ChangeFbProfileDelegate?
     
-    
+
     
     
 //    @IBAction func editImageButton(sender: AnyObject) {
@@ -26,10 +21,7 @@ class EditProfileViewController: UIViewController, UICollectionViewDelegate, UIC
 //        delegate?.changeProfileNameLabel()
 //    }
 
-    @IBAction func editAge(sender: AnyObject) {
-        delegate?.changeProfileAge()
-        
-    }
+
     
     
     override func viewDidLoad() {
